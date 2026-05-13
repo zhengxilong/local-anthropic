@@ -1,0 +1,29 @@
+{
+  "name": "openai-to-anthropic-proxy",
+  "description": "A proxy server that transforms OpenAI API requests to Anthropic format for Claude Code",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "openai-to-anthropic-proxy": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "keywords": [
+    "openai",
+    "anthropic",
+    "api",
+    "proxy",
+    "claude-code",
+    "claude",
+    "streaming",
+    "sse"
+  ],
+  "author": "Custom Adaptation",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "fastify": "^5.2.1"
+  }
+}
