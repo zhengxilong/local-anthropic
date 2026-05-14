@@ -32,7 +32,7 @@ OPENAI_BASE_URL=https://your-openai-api-endpoint.com/v1
 OPENAI_API_KEY=your-api-key-here
 OPENAI_MODEL=gpt-4o
 PORT=3000
-DEBUG=1
+DEBUG=0
 ```
 
 ## 运行
@@ -62,7 +62,7 @@ OPENAI_BASE_URL=https://api.openai.com/v1 \
 OPENAI_API_KEY=sk-xxx \
 OPENAI_MODEL=gpt-4o \
 PORT=3000 \
-DEBUG=1 \
+DEBUG=0 \
 npm start
 ```
 
@@ -71,7 +71,7 @@ npm start
 启动代理服务后，在 Claude Code 中设置环境变量：
 
 ```bash
-ANTHROPIC_BASE_URL=http://localhost:3000 claude
+ANTHROPIC_BASE_URL=http://localhost:3000
 ```
 
 或者在你的 Claude Code 配置文件中设置 `ANTHROPIC_BASE_URL`。
