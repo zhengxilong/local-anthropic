@@ -2,38 +2,6 @@
 
 一个代理服务，将 Anthropic API 格式的请求转换为 OpenAI 格式，使其能够与 OpenAI 风格的模型服务提供商兼容。专为 [Claude Code](https://claude.ai/code) 设计。
 
-## 一键安装
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/zhengxilong/local-anthropic/main/install.sh | bash
-```
-
-脚本会交互式地提示你输入 API Base URL、API Key 和 Model ID，然后自动下载、配置并启动服务。
-
-### 非交互式安装
-
-通过命令行参数跳过交互提示：
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/zhengxilong/local-anthropic/main/install.sh | bash -s -- \
-  -u https://api.example.com/v1 -k sk-xxx -m gpt-4o
-```
-
-通过环境变量：
-
-```bash
-OPENAI_BASE_URL=https://api.example.com/v1 \
-OPENAI_API_KEY=sk-xxx \
-OPENAI_MODEL=gpt-4o \
-curl -fsSL https://raw.githubusercontent.com/zhengxilong/local-anthropic/main/install.sh | bash
-```
-
-### 卸载
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/zhengxilong/local-anthropic/main/install.sh | bash -s -- --uninstall
-```
-
 ## 手动安装
 
 ```bash
@@ -44,6 +12,8 @@ cp .env.example .env
 # 编辑 .env 填入配置
 npm start
 ```
+
+这也是推荐的安装方式。当前不再支持通过 `install.sh` 一键安装。
 
 ## 配置
 
@@ -77,7 +47,7 @@ npm start
 node index.js
 ```
 
-### 使用环境变量运行
+### 使用环境变量启动
 
 ```bash
 OPENAI_BASE_URL=https://api.openai.com/v1 \
