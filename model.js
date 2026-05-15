@@ -3,9 +3,5 @@ export function resolveOpenAIModel(configuredModel, requestModel) {
     return configuredModel.trim()
   }
 
-  if (typeof requestModel === 'string' && requestModel.trim()) {
-    return requestModel.trim()
-  }
-
   return 'gpt-4o'
 }
