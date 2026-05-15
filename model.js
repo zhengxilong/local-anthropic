@@ -1,7 +1,7 @@
-export function resolveOpenAIModel(configuredModel, requestModel) {
+export function resolveOpenAIModel(configuredModel) {
   if (typeof configuredModel === 'string' && configuredModel.trim()) {
     return configuredModel.trim()
   }
 
-  return 'gpt-4o'
+  throw new Error('OPENAI_MODEL is required. Set it in .env or pass it as an environment variable.')
 }

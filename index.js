@@ -9,7 +9,7 @@ const OPENAI_BASE_URL = process.env.OPENAI_BASE_URL || 'https://api.openai.com/v
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || ''
 const PORT = process.env.PORT || 3000
 const DEBUG = process.env.DEBUG === '1'
-const OPENAI_MODEL = process.env.OPENAI_MODEL || '' // 可选的默认模型
+const OPENAI_MODEL = process.env.OPENAI_MODEL || ''
 
 const fastify = Fastify({
   logger: true
@@ -198,7 +198,7 @@ fastify.post('/v1/messages', async (request, reply) => {
 
     // 构建 OpenAI 请求体
     const openaiPayload = {
-      model: resolveOpenAIModel(OPENAI_MODEL, payload.model),
+      model: resolveOpenAIModel(OPENAI_MODEL),
       messages,
       max_tokens: payload.max_tokens || 4096,
       temperature: payload.temperature !== undefined ? payload.temperature : 1,
