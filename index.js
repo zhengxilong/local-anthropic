@@ -2,6 +2,7 @@
 import 'dotenv/config'
 import Fastify from 'fastify'
 import { TextDecoder } from 'util'
+import { resolveOpenAIModel } from './model.js'
 
 // 配置：从环境变量读取
 const OPENAI_BASE_URL = process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1'
@@ -197,7 +198,7 @@ fastify.post('/v1/messages', async (request, reply) => {
 
     // 构建 OpenAI 请求体
     const openaiPayload = {
-      model: payload.model || OPENAI_MODEL,
+      model: resolveOpenAIModel(OPENAI_MODEL, payload.model),
       messages,
       max_tokens: payload.max_tokens || 4096,
       temperature: payload.temperature !== undefined ? payload.temperature : 1,
